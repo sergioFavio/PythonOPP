@@ -6,5 +6,5 @@ class Cuenta:
         self.saldo = saldo
         self.limite = limite
         
-    def extracto():
+    def extracto(self):
         print('Saldo {} del titular {}'.format(self.saldo, self.titular))
