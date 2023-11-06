@@ -1,17 +1,17 @@
 class Cuenta:
     def __init__(self, numero, titular, saldo, limite):
         print("Construyendo el objeto...{}".format(self))
-        self.numero = numero
-        self.titular = titular
-        self.saldo = saldo
-        self.limite = limite
+        self.__numero = numero
+        self.__titular = titular
+        self.__saldo = saldo
+        self.__limite = limite
         
     def extracto(self):
-        print('Saldo {} del titular {}'.format(self.saldo, self.titular))
+        print('Saldo {} del titular {}'.format(self.__saldo, self.__titular))
         
     def depositar(self, valor):
-        self.saldo += valor
+        self.__saldo += valor
         
     def retirar(self, valor):
-        self.saldo -= valor
+        self.__saldo -= valor
         
