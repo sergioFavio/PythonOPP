@@ -15,7 +15,7 @@ class Cuenta:
     def retirar(self, valor):
         self.__saldo -= valor
         
-    def transferir(self, valor):
+    def transferir(self, valor, origen, destino):
         origen.retirar(valor)
         destino.depositar(valor)
         
