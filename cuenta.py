@@ -12,8 +12,17 @@ class Cuenta:
     def depositar(self, valor):
         self.__saldo += valor
         
+    def __puede_retirar(self, valor_a_retirar):
+        valor_disponible_para_retirar = self.__saldo + self.__limite
+        return valor_a_retirar <= valor_disponible_para_retirar
+    
+    
     def retirar(self, valor):
-        self.__saldo -= valor
+        if (self.__puede_retirar(valor)):
+            self.__saldo -= valor
+        else:
+            print('el valor {} pasó el limite'.format(valor))
+         
         
     def transferir(self, valor, destino):
         self.retirar(valor)
@@ -32,3 +41,7 @@ class Cuenta:
     @limite.setter
     def limite(self, limite):
         self.__limite = limite
+        
+    @staticmethod
+    def codigo_banco():
+        return "001"        
